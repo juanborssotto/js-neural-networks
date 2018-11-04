@@ -42,6 +42,7 @@ El primer paso es la propagación hacia adelante, que consiste en propagar valor
 Cada una de las neuronas de una capa tiene un valor interno y una conexión hacia cada una de las neurones de la siguiente capa. Cada conexión tiene un peso asociado. En la propagación el valor interno de una neurona de la siguiente capa se calcula como la suma del valor interno de cada una de las neurones de la capa anterior multiplicado por el peso de la conexión con esa neurona. 
 <br>
 Al valor generado mediante el cálculo anteriormente mencionado se le aplica una función de activación. Dicha función existe ya que como los valores son generados aleatoriamente sería difícil determinar cuales valores activan o no una neurona. Por ello por ejemplo una de las funciones más conocidas de activación es la función sigmoide que siempre genera resultados entre 0 y 1(más negativos se acercan a 0, más positivos se acercan a 1). Luego en base a esto se determina si se activa o no la neurona.
+<br>
 ![alt text](https://github.com/juanborssotto/js-neural-networks/blob/master/readme-imgs/network-1.png)
 <br>
 El siguiente paso es calcular el error de nuestra red neuronal. Necesitamos saberlo para determinar como actualizar su estado interno(pesos) y que genere resultados más precisos.
@@ -59,7 +60,7 @@ Otro concepto interesante en esta parte del proceso, es la del ratio de aprendis
 ## Proyecto
 Para hacer el proyecto elegí una herramienta online https://beta.observablehq.com, ya que permite utilizando javascript generar una aplicación que esta constantemente pendiente de los cambios del código, así por ejemplo uno puede insertar un gráfico y el mismo se actualizará cada vez que cambien sus variables de entrada generadas en el código.
 <br>
-Como proyecto elegí construir una pequeña red neuronal sin utilizar librerías que clasifica puntos(x, y) en un plano como a un lado o al otro de una línea que lo cruza. Lo elegí debido a que me pareció un problema con una complejidad acorde a ser la primera red neuronal que hago from scratch.
+Como proyecto elegí construir una pequeña red neuronal sin utilizar librerías que clasifica puntos(x, y) en un plano como a un lado o al otro de una línea que lo cruza. Lo elegí debido a que me pareció un problema con una complejidad acorde a ser la primera red neuronal que hago "from scratch".
 <br>
 Link al proyecto: https://beta.observablehq.com/@juanborssotto/javascript-neural-network-project-1
 
@@ -72,6 +73,7 @@ Para recalcular los pesos lo hago mediante fuerza bruta, acercandolos lo más ce
 <br>
 Finalmente se puede ver el resultado en el gráfico, para aumentar la cantidad de elementos de entrenamiento se puede modificar la constante TRAINED DATA, y para quitar la animación que muestra como cambia el estado de los puntos, comentar las líneas:
 <br>
-await setTimeout(() => {}, 1000)
-<br>
-yield { weights, biases }
+```
+//await setTimeout(() => {}, 1000)
+//yield { weights, biases }
+```
